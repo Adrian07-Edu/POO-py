@@ -1,0 +1,203 @@
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "dig.wood": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                "sounds/dig/wood1",
+                "sounds/dig/wood2",
+                "sounds/dig/wood3",
+                "sounds/dig/wood4",
+                "sounds/dig/wood5",
+                "sounds/dig/wood6"
+            ]
+        },
+        "fall.gravel": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/step/grass1",
+                "sounds/step/grass2",
+                "sounds/step/grass3",
+                "sounds/step/grass4",
+                "sounds/step/grass5",
+                "sounds/step/grass6"
+            ]
+        },
+        "jump.gravel": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/step/grass1",
+                "sounds/step/grass2",
+                "sounds/step/grass3",
+                "sounds/step/grass4",
+                "sounds/step/grass5",
+                "sounds/step/grass6"
+            ]
+        },
+        "land.gravel": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/step/grass1",
+                "sounds/step/grass2",
+                "sounds/step/grass3",
+                "sounds/step/grass4",
+                "sounds/step/grass5",
+                "sounds/step/grass6"
+            ]
+        },
+        "step.gravel": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/step/grass1",
+                "sounds/step/grass2",
+                "sounds/step/grass3",
+                "sounds/step/grass4",
+                "sounds/step/grass5",
+                "sounds/step/grass6"
+            ]
+        },
+        "cauldron.adddye": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.cleanarmor": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.cleanbanner": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.dyearmor": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.fillpotion": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.fillwater": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.takepotion": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "cauldron.takewater": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                {
+                    "name": "sounds/random/splash4",
+                    "volume": 0.10
+                }
+            ]
+        },
+        "random.splash": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/random/splash",
+                "sounds/random/splash2",
+                "sounds/random/splash3"
+            ]
+        },
+        "step.stone": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "sounds": [
+                "sounds/step/stone1",
+                "sounds/step/stone2",
+                "sounds/step/stone3",
+                "sounds/step/stone4",
+                "sounds/step/stone5",
+                "sounds/step/stone6"
+            ]
+        },
+        "dig.stone": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                "sounds/dig/stone1",
+                "sounds/dig/stone2",
+                "sounds/dig/stone3",
+                "sounds/dig/stone4",
+                "sounds/dig/stone5",
+                "sounds/dig/stone6",
+                "sounds/dig/stone7"
+            ]
+        },
+        "fire.fire": {
+            "__use_legacy_max_distance": "true",
+            "category": "block",
+            "sounds": [
+                "sounds/fire/fire",
+                "sounds/fire/fire2",
+                "sounds/fire/fire3",
+                "sounds/fire/fire4"
+            ]
+        },
+        "dig.copper": {
+            "category": "block",
+            "sounds": [
+                "sounds/dig/metal",
+                "sounds/dig/metal2"
+            ]
+        },
+        "place.copper": {
+            "category": "block",
+            "sounds": [
+                "sounds/dig/metal",
+                "sounds/dig/metal2"
+            ]
+        }
+    }
+}
