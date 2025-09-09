@@ -1,7 +1,0 @@
-{
-	"ui_defs": [
-		".aga/minecraft/ui/durability_slot.ui",
-		".aga/minecraft/ui/brewing_guide.ui",
-		".aga/minecraft/ui/brewing_icons.ui"
-	]
-}
