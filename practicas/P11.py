@@ -1,4 +1,5 @@
 secret_number = 777
+
 print(
 """
 +================================+
@@ -9,8 +10,11 @@ print(
 |¿Cuál es el número secreto?     |
 +================================+
 """)
+
 selected_number = int(input("Introduce un número: "))
+
 while selected_number != secret_number:
     print("¡Ja, ja! ¡Estás atrapado en mi bucle!")
     selected_number = int(input("Introduce un número: "))
+
 print("¡Bien hecho, muggle! Eres libre ahora.")
