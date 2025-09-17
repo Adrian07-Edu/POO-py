@@ -1,8 +1,13 @@
-hat_list = [1, 2, 3, 4, 5]
-hat_list[2] = int(input("introduce un numero: "))
+palabra = input("Introduce una palabra: ").upper()
 
-del hat_list[-1]
+# Forma corta - (No sigue las especificaciones del problema). Utiliza el operador 'not in'
+# for letra in palabra:
+#     if letra not in "AEIOU": print(letra)
 
-print(len(hat_list))
-
-print(hat_list)
+for letra in palabra:
+    if letra == "A": continue
+    elif letra == "E": continue
+    elif letra == "I": continue
+    elif letra == "O": continue
+    elif letra == "U": continue
+    else: print(letra)
