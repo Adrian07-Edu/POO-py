@@ -1,28 +1,11 @@
-# paso 1
-beatles = []
-print("Paso 1:", beatles)
+import dis
 
-# paso 2
-beatles.append("John Lennon")
-beatles.append("Paul McCartney")
-beatles.append("George Harrison")
-print("Paso 2:", beatles)
+def a(lst, el):
+    return not el in lst
 
-# paso 3
-for nombre in ['Stuart', 'Pete']:
-    beatle = input("Introduce el nombre de " + nombre + ": ")
-    beatles.append(beatle)
-print("Paso 3:", beatles)
+def b(lst, el):
+    return el not in lst
 
-# paso 4
-del beatles[-2]
-del beatles[-1]
-print("Paso 4:", beatles)
-
-# paso 5
-beatles.insert(0, "Ringo Starr")
-print("Paso 5:", beatles)
-
-
-# probando la longitud de la lista
-print("Los Fav", len(beatles))
+dis.dis(a)
+print("\n")
+dis.dis(b)
