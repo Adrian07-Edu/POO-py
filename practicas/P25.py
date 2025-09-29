@@ -6,6 +6,7 @@ def calcIVA(precio):
 # calcular cantidad + iva
 def calcTotal(precio):
     iva = calcIVA(precio)
-    return precio + iva
+    return round(precio + iva, 2)
 
-print(calcTotal(int(input('Precio origial: '))))
+precio = float(input('Precio origial: '))
+print(calcTotal(precio))
