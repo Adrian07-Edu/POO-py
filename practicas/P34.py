@@ -38,12 +38,11 @@ def ajustar(palabra, longitud, es_index=False):
         return (' ' * (longitud - len(palabra))) + palabra
     return palabra + (' ' * (longitud - len(palabra)))
 
-def mostrar_libros():
+def mostrar_libros(libros):
     DISPONIBLE = 'disponible'
     NO_DISPONIBLE = 'ocupado'
-    
-    global biblioteca
-    longitud = len(biblioteca)
+
+    longitud = len(libros)
 
     indice_col = 'Indice'
     nombre_col = 'Nombre'
@@ -55,13 +54,13 @@ def mostrar_libros():
     
     if len(str(longitud - 1)) > index_longitud: index_longitud = len(str(longitud - 1))
 
-    for libro in biblioteca:
+    for libro in libros:
         if len(libro['nombre']) > nombre_longitud: nombre_longitud = len(libro['nombre'])
 
     print('+-' + '-' * index_longitud, '-' * nombre_longitud, '-' * info_longitud, sep='-+-', end='-+\n')
     print('| ' + ajustar(indice_col, index_longitud), ajustar(nombre_col, nombre_longitud), ajustar(info_col, info_longitud), '', sep=' | ')
     for index in range(longitud):
-        libro = biblioteca[index]
+        libro = libros[index]
         str_index = str(index)
         if libro['disponible']: info = DISPONIBLE
         else: info = NO_DISPONIBLE
@@ -101,12 +100,12 @@ while True:
         if index == -1:
             del biblioteca[index]
         else: print("El libro '" + nombre + "' no existe")
-    elif accion == MOSTRAR: mostrar_libros()
+    elif accion == MOSTRAR: mostrar_libros(biblioteca)
     elif accion == BUSCAR:
         nombre = input('Nombre del libro a buscar: ')
         index, libro = buscar_libro(nombre)
         if index != -1:
-            print(libro_a_str(libro))
+            mostrar_libros([libro])
         else: print("No se encontro el libro '" + nombre + "'")
     else:
         print("'" + accion + "' no es una accion valida")
