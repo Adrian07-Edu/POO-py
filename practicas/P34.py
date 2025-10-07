@@ -55,12 +55,14 @@ def mostrar_libros(libros):
     if len(str(longitud - 1)) > index_longitud: index_longitud = len(str(longitud - 1))
 
     for libro in libros:
+        if libro == None: continue # Para reutilizar funcion en "Buscar libro"
         if len(libro['nombre']) > nombre_longitud: nombre_longitud = len(libro['nombre'])
 
     print('+-' + '-' * index_longitud, '-' * nombre_longitud, '-' * info_longitud, sep='-+-', end='-+\n')
     print('| ' + ajustar(indice_col, index_longitud), ajustar(nombre_col, nombre_longitud), ajustar(info_col, info_longitud), '', sep=' | ')
     for index in range(longitud):
         libro = libros[index]
+        if libro == None: continue # Para reutilizar funcion en "Buscar libro"
         str_index = str(index)
         if libro['disponible']: info = DISPONIBLE
         else: info = NO_DISPONIBLE
@@ -70,13 +72,13 @@ def mostrar_libros(libros):
     print('+-' + '-' * index_longitud, '-' * nombre_longitud, '-' * info_longitud, sep='-+-', end='-+\n')
         
 
-def buscar_libro(nombre):
-    global biblioteca
+def buscar_libros(nombre):
+    libros = []
     for i in range(len(biblioteca)):
         libro = biblioteca[i]
-        if libro['nombre'].lower() == nombre.lower():
-            return (i,libro)
-    return (-1,)
+        if nombre.lower() in libro['nombre'].lower():
+            libros.append((i,libro))
+    return tuple(libros)
 
 biblioteca = [{'nombre': 'El principito', 'disponible': True}, {'nombre': 'Cenicienta', 'disponible': False}]
 
@@ -85,27 +87,35 @@ while True:
     if accion == SALIR: break
     elif accion == AGREGAR:
         nombre = input('Nombre del libro a agregar: ')
-        if buscar_libro(nombre) == (-1,):
+        if buscar_libros(nombre) == ():
             biblioteca.append({'nombre': nombre, 'disponible': True})
-        else: print("El libro '" + nombre + "' ya existe")
+        else: print("El libro '" + libro['nombre'] + "' ya existe")
     elif accion == ACTUALIZAR:
         nombre = input('Nombre del libro a actualizar: ')
-        index, libro = buscar_libro(nombre)
-        if index == -1:
-            print("El libro '" + nombre + "' no existe")
-        else: biblioteca.append({'nombre': nombre, 'disponible': not libro['disponible']})
+        libros = buscar_libros(nombre)
+        if libros == (): print("El libro '" + nombre + "' no existe")
+        elif len(libros) > 1: print("Hay mas de un libro que coincide con '", nombre, "'", sep='')
+        else:
+            (index, libro), = libros
+            biblioteca[index] = {'nombre': libro['nombre'], 'disponible': not libro['disponible']}
     elif accion == ELIMINAR:
         nombre = input('Nombre del libro a eliminar: ')
-        index, _ = buscar_libro(nombre)
-        if index == -1:
-            del biblioteca[index]
-        else: print("El libro '" + nombre + "' no existe")
+        libros = buscar_libros(nombre)
+        if libros == (): print("El libro '" + nombre + "' no existe")
+        elif len(libros) > 1: print("Hay mas de un libro que coincide con '", nombre, "'", sep='')
+        else:
+            confirmar = input("¿Estás seguro que deseas eliminar '" + libro['nombre'] + "'? (s/n): ")
+            if confirmar.lower() == 's':
+                del biblioteca[index]
     elif accion == MOSTRAR: mostrar_libros(biblioteca)
     elif accion == BUSCAR:
         nombre = input('Nombre del libro a buscar: ')
-        index, libro = buscar_libro(nombre)
-        if index != -1:
-            mostrar_libros([libro])
+        libros = buscar_libros(nombre)
+        if libros != ():
+            libros_mostrar = [None for _ in range(len(biblioteca))]
+            for (index, libro) in libros:
+                libros_mostrar[index] = libro
+            mostrar_libros(libros_mostrar)
         else: print("No se encontro el libro '" + nombre + "'")
     else:
         print("'" + accion + "' no es una accion valida")
