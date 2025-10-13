@@ -1,13 +1,15 @@
-class Libro:
-    def __init__(self, nombre: str, autor: str, fecha: str):
+class Mascota:
+    def __init__(self, nombre: str, edad: int, dueño: str):
         self.nombre = nombre
-        self.autor = autor
-        self.fecha = fecha
-    def citar(self):
-        autor = self.autor
-        nombre = self.nombre
-        fecha = self.fecha
-        return f'{autor}. ({fecha}). {nombre}.'
+        self.edad = edad
+        self.dueño = dueño
+    def tipo(self) -> str:
+        raise ValueError("No esta especificado el tipo.")
 
-libro1 = Libro('El principito', 'Saint-Exupéry', 'abr. 1943')
-print(libro1.citar())
+
+class Veterinaria:
+    def __init__(self, nombre: str):
+        self.nombre = nombre
+        self.mascotas: list[Mascota] = []
+    def registrar_mascota(self, mascota: Mascota):
+        self.mascotas.append(mascota)
