@@ -65,8 +65,7 @@ def eliminar_estudiante():
 
 def actualizar_estudiante():
     matricula = input('>> Ingresa la matricula del estudiante: ')
-    for i in range(len(registro)):
-        estudiante = registro[i]
+    for estudiante in registro:
         if estudiante.matricula != matricula: continue # Este no es, seguimos buscando
         nombre = input('>>> Ingresa el nuevo nombre: ')
         carrera = input('>>> Ingresa la nueva carrera: ')
@@ -87,7 +86,7 @@ while True:
     print('| 3.- Buscar estudiante             |')
     print('| 4.- Agregar calificación          |')
     print('| 5.- Eliminar estudiante           |')
-    print('| 6.- Actualizar estudiante           |')
+    print('| 6.- Actualizar estudiante         |')
     print('| 7.- Salir                         |')
     print('+-----------------------------------+')
 
